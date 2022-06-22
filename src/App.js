@@ -10,6 +10,7 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import DealerProfile from './Components/DealerProfile/DealerProfile';
 import ContactUs from './Components/ContactUs/ContactUs';
 import PageNotFound from './Components/PageNotFound';
+import PropertyPage from './Components/PropertyPage/PropertyPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<LandingPage />}/>
         <Route path="/dealerProfile" element={<DealerProfile />}/>
         <Route path="/contactUs" element={<ContactUs />}/>
+        <Route path="/property" element={<PropertyPage/>}/>
       </Routes>
     </>
   );

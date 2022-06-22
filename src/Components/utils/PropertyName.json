@@ -1,0 +1,34 @@
+[
+  {
+    "id": "property1",
+    "imgSrc": "./img/house-1.jpg",
+    "propertyName": "Andysite House",
+    "propertyAddress": "11709 Andesite Rd, Manor, TX 78653",
+    "propertyArea": "2,570",
+    "propertyPrice": "449,900"
+  },
+  {
+    "id": "property2",
+    "imgSrc": "./img/house-2.jpg",
+    "propertyName": "Bainbridge House",
+    "propertyAddress": "1021 Bainbridge Ln, TX 75126",
+    "propertyArea": "2,000",
+    "propertyPrice": "324,900"
+  },
+  {
+    "id": "property3",
+    "imgSrc": "./img/house-3.jpg",
+    "propertyName": "Merlin Property",
+    "propertyAddress": "5046 Merlin, San Antonio, TX 78218",
+    "propertyArea": "3,025",
+    "propertyPrice": "299,000"
+  },
+  {
+    "id": "property4",
+    "imgSrc": "./img/house-4.jpg",
+    "propertyName": "Paso Villa",
+    "propertyAddress": "6047 Bandolero, El Paso, TX 79912s",
+    "propertyArea": "2,312.5",
+    "propertyPrice": "319,999"
+  }
+]

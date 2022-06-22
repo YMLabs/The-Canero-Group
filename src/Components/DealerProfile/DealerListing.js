@@ -2,41 +2,17 @@ import React, { useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import ListingCard from "./ListingCard";
+import PropertyDetails from "../utils/PropertyName.json";
 
 function DealerListing() {
   const [openListingModal, setOpenListingModal] = useState(false);
   const onOpenListingModal = () => setOpenListingModal(true);
   const onCloseListingModal = () => setOpenListingModal(false);
-  const [propertyListings, setPropertListings] = useState([
-    <ListingCard
-      imgSrc="./img/house-1.jpg"
-      PropertyName="Andysite House"
-      PropertyAddress="11709 Andesite Rd, Manor, TX 78653"
-      PropertyArea="2,570"
-      PropertyPrice="449,900"
-    />,
-    <ListingCard
-      imgSrc="./img/house-2.jpg"
-      PropertyName="Bainbridge House"
-      PropertyAddress="1021 Bainbridge Ln, TX 75126"
-      PropertyArea="2,000"
-      PropertyPrice="324,900"
-    />,
-    <ListingCard
-      imgSrc="./img/house-3.jpg"
-      PropertyName="Merlin Property"
-      PropertyAddress="5046 Merlin, San Antonio, TX 78218"
-      PropertyArea="3,025"
-      PropertyPrice="299,000"
-    />,
-    <ListingCard
-      imgSrc="./img/house-4.jpg"
-      PropertyName="Paso Villa"
-      PropertyAddress="6047 Bandolero, El Paso, TX 79912s"
-      PropertyArea="2,312.5"
-      PropertyPrice="319,999"
-    />,
-  ]);
+
+  const [modalPropertyData, setModalPropertyData] = useState(null);
+  const [openPropertyModal, setOpenPropertyModal] = useState(false);
+  const onOpenPropertyModal = () => setOpenPropertyModal(true);
+  const onClosePropertyModal = () => setOpenPropertyModal(false);
 
   return (
     <div className="p-4">
@@ -97,23 +73,45 @@ function DealerListing() {
 
               <div className="flex justify-between items-center w-96 py-2">
                 <select className="p-2 rounded-lg border-0 outline-none focus:outline-none w-full pl-10 ring-offset-2 ring-2 focus:ring-blue-500 bg-blue-50">
-                  <option value="" className="text-left">Type</option>
-                  <option value=""  className="text-left">Residential</option>
-                  <option value="" className="text-left">Office</option>
-                  <option value="" className="text-left">Shop</option>
+                  <option value="" className="text-left">
+                    Type
+                  </option>
+                  <option value="" className="text-left">
+                    Residential
+                  </option>
+                  <option value="" className="text-left">
+                    Office
+                  </option>
+                  <option value="" className="text-left">
+                    Shop
+                  </option>
                 </select>
 
                 <select className="p-2 mx-4 relative rounded-lg border-0 outline-none focus:outline-none w-full pl-10 ring-offset-2 ring-2 focus:ring-blue-500 bg-blue-50">
-                  <option value="" className="text-left">Status</option>
-                  <option value="" className="text-left">For Rent</option>
-                  <option value="" className="text-left">For Sale</option>
+                  <option value="" className="text-left">
+                    Status
+                  </option>
+                  <option value="" className="text-left">
+                    For Rent
+                  </option>
+                  <option value="" className="text-left">
+                    For Sale
+                  </option>
                 </select>
 
                 <select className="p-2 relative rounded-lg border-0 outline-none focus:outline-none w-full pl-10 ring-offset-2 ring-2 focus:ring-blue-500 bg-blue-50">
-                  <option value="" className="text-left">Label</option>
-                  <option value="" className="text-left">Hot Offer</option>
-                  <option value="" className="text-left">Open House</option>
-                  <option value="" className="text-left">Sold</option>
+                  <option value="" className="text-left">
+                    Label
+                  </option>
+                  <option value="" className="text-left">
+                    Hot Offer
+                  </option>
+                  <option value="" className="text-left">
+                    Open House
+                  </option>
+                  <option value="" className="text-left">
+                    Sold
+                  </option>
                 </select>
               </div>
 
@@ -130,11 +128,52 @@ function DealerListing() {
 
       <h1 className="pl-8 pb-4 text-3xl font-medium">Your properties</h1>
       <hr />
+
       <div className="property-lists grid grid-cols-4 gap-4">
-        {propertyListings.map((items) => {
-          return <div key={items}>{items}</div>;
+        {PropertyDetails.map((property) => {
+          return (
+            <div
+              onClick={() => {
+                onOpenPropertyModal(true);
+                setModalPropertyData(property);
+              }}
+              key={property.id}
+              className="cursor-pointer"
+            >
+              <ListingCard
+                imgSrc={property.imgSrc}
+                PropertyName={property.propertyName}
+                PropertyAddress={property.propertyAddress}
+                PropertyArea={property.propertyArea}
+                PropertyPrice={property.propertyPrice}
+              />
+            </div>
+          );
         })}
       </div>
+      {modalPropertyData ? (
+        <Modal
+          open={openPropertyModal}
+          onClose={onClosePropertyModal}
+          center
+          closeOnEsc
+          closeOnOverlayClick
+        >
+          <div className="p-2 flex justify-center items-center">
+            <div>
+              <img className="h-96 w-96 object-cover rounded-xl" src={modalPropertyData.imgSrc} alt="" />
+            </div>
+            <div className="p-4">
+              <p className="text-xl font-medium">{modalPropertyData.propertyName}</p>
+              <p>{modalPropertyData.propertyAddress}</p>
+              <p>{modalPropertyData.propertyArea} sqft</p>
+              <p  className="text-lg font-medium">$ {modalPropertyData.propertyPrice}</p>
+            </div>
+          </div>
+        </Modal>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
