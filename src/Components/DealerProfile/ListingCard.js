@@ -2,7 +2,7 @@ import React from "react";
 
 function ListingCard(props) {
   return (
-    <div className="listing-card m-8 border-2 rounded-lg shadow drop-shadow-2xl hover:-translate-y-2 hover:shadow-xl ease-in-out duration-300 break-all">
+    <div className="listing-card m-8 border-2 rounded-lg shadow drop-shadow-2xl hover:-translate-y-2 hover:shadow-xl ease-in-out duration-300 break-all cursor-pointer">
       <div className=" overflow-hidden ease-in-out duration-300 rounded-lg">
         <img
           className="rounded-lg w-full shadow ease-in-out duration-300"

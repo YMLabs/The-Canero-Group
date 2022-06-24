@@ -2,33 +2,61 @@
   {
     "id": "property1",
     "imgSrc": "./img/house-1.jpg",
+    "room1": "./img/house1/room1.jpg",
+    "room2": "./img/house1/room2.jpg",
+    "room3": "./img/house1/room3.jpg",
+    "room4": "./img/house1/room4.jpg",
     "propertyName": "Andysite House",
     "propertyAddress": "11709 Andesite Rd, Manor, TX 78653",
     "propertyArea": "2,570",
-    "propertyPrice": "449,900"
+    "propertyPrice": "449,900",
+    "bedrooms": "4",
+    "shower":"3",
+    "garage":"1"
   },
   {
     "id": "property2",
     "imgSrc": "./img/house-2.jpg",
+    "room1": "./img/house2/room1.jpg",
+    "room2": "./img/house2/room2.jpg",
+    "room3": "./img/house2/room3.jpg",
+    "room4": "./img/house2/room4.jpg",
     "propertyName": "Bainbridge House",
     "propertyAddress": "1021 Bainbridge Ln, TX 75126",
     "propertyArea": "2,000",
-    "propertyPrice": "324,900"
+    "propertyPrice": "324,900",
+    "bedrooms": "3",
+    "shower":"3",
+    "garage":"2"
   },
   {
     "id": "property3",
     "imgSrc": "./img/house-3.jpg",
+    "room1": "./img/house3/room1.jpg",
+    "room2": "./img/house3/room2.jpg",
+    "room3": "./img/house3/room3.jpg",
+    "room4": "./img/house3/room4.jpg",
     "propertyName": "Merlin Property",
     "propertyAddress": "5046 Merlin, San Antonio, TX 78218",
     "propertyArea": "3,025",
-    "propertyPrice": "299,000"
+    "propertyPrice": "299,000",
+    "bedrooms": "4",
+    "shower":"1",
+    "garage":"2"
   },
   {
     "id": "property4",
     "imgSrc": "./img/house-4.jpg",
+    "room1": "./img/house4/room1.jpg",
+    "room2": "./img/house4/room2.jpg",
+    "room3": "./img/house4/room3.jpg",
+    "room4": "./img/house4/room4.jpg",
     "propertyName": "Paso Villa",
     "propertyAddress": "6047 Bandolero, El Paso, TX 79912s",
     "propertyArea": "2,312.5",
-    "propertyPrice": "319,999"
+    "propertyPrice": "319,999",
+    "bedrooms": "6",
+    "shower":"4",
+    "garage":"2"
   }
 ]
