@@ -24,8 +24,8 @@ function DealerProfile() {
       <Navbar />
       <hr />
       {openPropertyInfo ? (
-        <div className="px-16">
-          <div>
+        <div className="">
+          <div className="px-12">
             <p className="cursor-pointer text-xl my-4 py-2" onClick={() => {setOpenPropertyInfo(false)}}>
               <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
             </p>
