@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import MortgageCalculator from "../../MortageCalculator/MortgageCalculator";
 
 function ExploreHomeLoans() {
+  const [openMortgageCalculator, setOpenMortgageCalculator] = useState(false);
+  const onOpenMortgageCalculator = () => setOpenMortgageCalculator(true);
+  const onCloseMortgageCalculator = () => setOpenMortgageCalculator(false);
   return (
     <section className="home-loan py-2">
       <div className="flex justify-center items-center rounded-xl my-8 mx-auto box-border">
@@ -15,10 +21,18 @@ function ExploreHomeLoans() {
             Explore your home loan options
           </h1>
           <p className="text-neutral-600 mb-4">Avail easy loans from our partnered banks</p>
-          <button className="bg-neutral-700 hover:bg-neutral-900 text-white py-2 px-4 rounded-lg">
+          <button className="bg-neutral-700 hover:bg-neutral-900 text-white py-2 px-4 rounded-lg" onClick={onOpenMortgageCalculator}>
             Compare Loans
           </button>
         </div>
+        <Modal
+        open={openMortgageCalculator}
+        onClose={onCloseMortgageCalculator}
+        center
+        aria-labelledby="Mortgage Calculator Modal"
+        >
+          <MortgageCalculator/>
+        </Modal>
       </div>
     </section>
   );
