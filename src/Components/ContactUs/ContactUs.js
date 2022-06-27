@@ -33,22 +33,22 @@ function ContactUs() {
           </div>
           <form className="flex flex-col items-center justify-center" action="">
             <input
-              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 focus:ring-blue-500 transition ease-in-out duration-200"
+              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 border-0 focus:ring-blue-500 transition ease-in-out duration-200"
               type="text"
               placeholder="Your Name"
             />
             <input
-              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 focus:ring-blue-500 transition ease-in-out duration-200"
+              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 border-0 focus:ring-blue-500 transition ease-in-out duration-200"
               type="text"
               placeholder="Your Number"
             />
             <input
-              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 focus:ring-blue-500 transition ease-in-out duration-200"
+              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 border-0 focus:ring-blue-500 transition ease-in-out duration-200"
               type="text"
               placeholder="Your Email Address"
             />
             <textarea
-              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 focus:ring-blue-500 transition ease-in-out duration-200"
+              className="w-11/12 p-2 m-2 text-md bg-blue-50 rounded-md focus:outline-none focus:shadow-lg ring-offset-2 ring-2 border-0 focus:ring-blue-500 transition ease-in-out duration-200"
               rows="3"
               type="text"
               placeholder="Your Message/Question/Feedback"

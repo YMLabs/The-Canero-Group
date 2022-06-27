@@ -3,6 +3,8 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import SignUp from "../SignUp/SignUp";
 import SignIn from "../SignIn/SignIn";
+import { Dropdown } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [openSignUp, setOpenSignUp] = useState(false);
@@ -18,14 +20,69 @@ function Navbar() {
           <img className="logo-img" src="./img/CANERO-GROUP-LOGO.png" alt="" />
         </li>
         <div className="flex justify-center font-semibold">
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">Buy</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">Rent</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">Sold</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">New Homes</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">Find Agents</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">Home Loans</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">News</li>
-          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">Commercial</li>
+          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+            <Link to="/">
+            Home
+            </Link>
+          </li>
+          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+            About
+          </li>
+          <li className="z-10 text-3xl ring-0 px-2">
+            <Dropdown
+              label="Properties"
+              style={{ background: "#fff", color: "#000",border:"none" }}
+            >
+              <Dropdown.Item>Rent</Dropdown.Item>
+              <Dropdown.Item>Buy</Dropdown.Item>
+              <Dropdown.Item>Sell</Dropdown.Item>
+              <Dropdown.Item>Search</Dropdown.Item>
+            </Dropdown>
+          </li>
+          <li className="z-10">
+            <Dropdown
+              label="Agents"
+              style={{ background: "#fff", color: "#000" }}
+            >
+              <Dropdown.Item>For Rent</Dropdown.Item>
+              <Dropdown.Item>For Buy</Dropdown.Item>
+              <Dropdown.Item>For Sell</Dropdown.Item>
+            </Dropdown>
+          </li>
+          <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+            Home Loans
+          </li>
+          <li className="z-10 rounded-lg cursor-pointer">
+          <Dropdown
+              label="Contact Us"
+              style={{ background: "#fff", color: "#000" }}
+            >
+              <Dropdown.Item>
+                <a href="https://goo.gl/maps/5FgndeorXT7pDhvDA" className="text-left">
+                <i className="fa fa-map-marker" aria-hidden="true"></i>
+                &nbsp;&nbsp;250 Giralda Ave Coral Gables, FL 33134
+                </a>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <a href="mailto:info@canerogroup.com" className="text-left">
+                <i class="fa fa-envelope" aria-hidden="true"></i> 
+                &nbsp;&nbsp;info@canerogroup.com
+                </a>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <a href="tel:(305)444-5004" className="text-left">
+                <i class="fa fa-phone-square" aria-hidden="true"></i>
+                &nbsp;&nbsp;(305) 444-5004
+                </a>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link to="contactUs" className="text-left">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                &nbsp;&nbsp;Shoot us a message
+                </Link>
+              </Dropdown.Item>
+            </Dropdown>
+          </li>
         </div>
         <li>
           <button
@@ -49,7 +106,6 @@ function Navbar() {
         center
         aria-labelledby="signup-modal"
         aria-describedby="signup as a dealer or as a buyer"
-        className="rounded"
       >
         <div className="p-4">
           <SignIn />

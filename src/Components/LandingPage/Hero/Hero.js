@@ -1,47 +1,10 @@
 import React, { useState } from "react";
 
 function Hero() {
-  const [isBuyActive, setBuyActive] = useState(false)
-  const [isRentActive, setRentActive] = useState(false)
-  const [isSoldActive, setSoldActive] = useState(false)
-  const [isAddressActive, setAddressActive] = useState(false)
-  const [isAgentsActive, setAgentsActive] = useState(false)
-
-  const makeBuyActive = () => {
-    setBuyActive(true)
-    setRentActive(false)
-    setSoldActive(false)
-    setAddressActive(false)
-    setAgentsActive(false)
-  }
-  const makeRentActive = () => {
-    setBuyActive(false)
-    setRentActive(true)
-    setSoldActive(false)
-    setAddressActive(false)
-    setAgentsActive(false)
-  }
-  const makeSoldActive = () => {
-    setBuyActive(false)
-    setRentActive(false)
-    setSoldActive(true)
-    setAddressActive(false)
-    setAgentsActive(false)
-  }
-  const makeAddressActive = () => {
-    setBuyActive(false)
-    setRentActive(false)
-    setSoldActive(false)
-    setAddressActive(true)
-    setAgentsActive(false)
-  }
-  const makeAgentsActive = () => {
-    setBuyActive(false)
-    setRentActive(false)
-    setSoldActive(false)
-    setAddressActive(false)
-    setAgentsActive(true)
-  }
+  const [isActive, setActive] = useState("All Status");
+  const makeActive = (e) => {
+    setActive(e.target.innerHTML);
+  };
 
   return (
     <section className="mx-2 my-0 hero-section flex flex-col justify-center items-center relative">
@@ -54,27 +17,72 @@ function Hero() {
       </div>
       <div className="absolute text-center">
         <h2 className="font-bold text-4xl">Properties to call home</h2>
-        <div className="bg-white rounded-lg">
+        <div className="bg-white rounded-lg w-full">
           <ul className="flex justify-evenly text-gray-500 p-4 mt-12">
-            <li className="px-8 py-2 mx-2 cursor-pointer font-semibold" onClick={makeBuyActive} style={isBuyActive?{background:"#dedede", borderRadius:"7px", borderBottom:"5px solid #144B8B", color:"#171717" }:{}}>
-              <a className=" hover:text-gray-900 hover:underline">Buy</a>
+            <li
+              className="px-8 py-2 mx-2 cursor-pointer font-semibold"
+              onClick={makeActive}
+              style={
+                isActive === "All Status"
+                  ? {
+                      background: "#dedede",
+                      borderRadius: "7px",
+                      borderBottom: "5px solid #144B8B",
+                      color: "#171717",
+                    }
+                  : {}
+              }
+            >
+              <a className=" hover:text-gray-900 hover:underline">All Status</a>
             </li>
-            <li className="px-8 py-2 mx-2 cursor-pointer font-semibold"  onClick={makeRentActive} style={isRentActive?{background:"#dedede", borderRadius:"7px", borderBottom:"5px solid #144B8B", color:"#171717" }:{}}>
-              <a className=" hover:text-gray-900 hover:underline">Rent</a>
+            <li
+              className="px-8 py-2 mx-2 cursor-pointer font-semibold"
+              onClick={makeActive}
+              style={
+                isActive === "Residential"
+                  ? {
+                      background: "#dedede",
+                      borderRadius: "7px",
+                      borderBottom: "5px solid #144B8B",
+                      color: "#171717",
+                    }
+                  : {}
+              }
+            >
+              <a className=" hover:text-gray-900 hover:underline">
+                Residential
+              </a>
             </li>
-            <li className="px-8 py-2 mx-2 cursor-pointer font-semibold"  onClick={makeSoldActive} style={isSoldActive?{background:"#dedede", borderRadius:"7px", borderBottom:"5px solid #144B8B", color:"#171717" }:{}}>
-              <a className=" hover:text-gray-900 hover:underline">Sold</a>
-            </li>
-            <li className="px-8 py-2 mx-2 cursor-pointer font-semibold"  onClick={makeAddressActive} style={isAddressActive?{background:"#dedede", borderRadius:"7px", borderBottom:"5px solid #144B8B", color:"#171717" }:{}}>
-              <a className=" hover:text-gray-900 hover:underline">Address</a>
-            </li>
-            <li className="px-8 py-2 mx-2 cursor-pointer font-semibold"  onClick={makeAgentsActive} style={isAgentsActive?{background:"#dedede", borderRadius:"7px", borderBottom:"5px solid #144B8B", color:"#171717" }:{}}>
-              <a className=" hover:text-gray-900 hover:underline">Agents</a>
+            <li
+              className="px-8 py-2 mx-2 cursor-pointer font-semibold"
+              onClick={makeActive}
+              style={
+                isActive === "Commercial"
+                  ? {
+                      background: "#dedede",
+                      borderRadius: "7px",
+                      borderBottom: "5px solid #144B8B",
+                      color: "#171717",
+                    }
+                  : {}
+              }
+            >
+              <a className=" hover:text-gray-900 hover:underline">Commercial</a>
             </li>
           </ul>
 
-          <div className="flex items-center justify-center">
-            <div className="relative flex w-full flex-wrap items-stretch p-4">
+          <div className="flex items-center justify-evenly">
+            <div
+              className="rounded-full px-4 py-2 text-semibold flex items-center"
+              style={{ display: isActive === "All Status" ? "none" : "" }}
+            >
+              <select name="" id="" className=" border-0 outline-0 rounded-full hover:bg-gray-100">
+                <option className="bg-white text-semibold" value="">For Rent</option>
+                <option className="bg-white text-semibold" value="">For Sale</option>
+              </select>
+            </div>
+
+            <div className="relative flex w-96 flex-wrap items-stretch p-4">
               <span className="z-10 h-full leading-snug font-normal text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,36 +104,13 @@ function Hero() {
               <input
                 type="text"
                 placeholder="Search suburb, postcode or state"
-                className="px-3 py-3 relative rounded-lg border-0 outline-none focus:outline-none w-full pl-10 hover:bg-gray-100"
+                className="px-3 py-3 relative rounded-lg border-0 ring-0 outline-none focus:outline-none w-full pl-10 hover:bg-gray-100"
               />
             </div>
-            <button className="rounded-full hover:bg-gray-100 px-4 py-2 text-semibold flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-adjustments-horizontal"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="#2c3e50"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="14" cy="6" r="2" />
-                <line x1="4" y1="6" x2="12" y2="6" />
-                <line x1="16" y1="6" x2="20" y2="6" />
-                <circle cx="8" cy="12" r="2" />
-                <line x1="4" y1="12" x2="6" y2="12" />
-                <line x1="10" y1="12" x2="20" y2="12" />
-                <circle cx="17" cy="18" r="2" />
-                <line x1="4" y1="18" x2="15" y2="18" />
-                <line x1="19" y1="18" x2="20" y2="18" />
-              </svg>{" "}
-              Filters
+
+            <button className="rounded-full px-4 py-2 mx-2 bg-[#144B8B] hover:bg-[#144BAA] text-gray-100 font-semibold">
+              Search
             </button>
-            <button className="rounded-full px-4 py-2 mx-2 bg-[#144B8B] hover:bg-[#144BAA] text-gray-100 font-semibold">Search</button>
           </div>
         </div>
       </div>

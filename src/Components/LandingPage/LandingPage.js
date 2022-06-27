@@ -4,6 +4,7 @@ import ExploreHomeLoans from "./ExploreHomeLoans/ExploreHomeLoans";
 import Footer from "./Footer/Footer";
 import Hero from "./Hero/Hero";
 import Navbar from "./Navbar/Navbar";
+import NearbyPlaces from "./NearbyPlaces/NearbyPlaces";
 import Prefooter from "./Prefooter/Prefooter";
 import PropertyNews from "./PropertyNews/PropertyNews";
 import Social from "./Social/Social";
@@ -16,6 +17,7 @@ function LandingPage() {
       <div className="px-16">
         <ExploreAllThingsProperty />
         <PropertyNews />
+        <NearbyPlaces/>
       </div>
       <ExploreHomeLoans />
       <div className="px-16">
