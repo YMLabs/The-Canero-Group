@@ -78,7 +78,7 @@ function Navbar() {
                 </a>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Link to="contactUs" className="text-left">
+                <Link to="/contactUs" className="text-left">
                 <i class="fa fa-paper-plane" aria-hidden="true"></i>
                 &nbsp;&nbsp;Shoot us a message
                 </Link>
