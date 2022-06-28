@@ -26,7 +26,9 @@ function Navbar() {
             </Link>
           </li>
           <li className="p-2 rounded-lg cursor-pointer hover:bg-gray-100">
-            About
+          <Link to="/aboutUs">
+            About Us
+            </Link>
           </li>
           <li className="z-10 text-3xl ring-0 px-2">
             <Dropdown

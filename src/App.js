@@ -11,6 +11,7 @@ import DealerProfile from './Components/DealerProfile/DealerProfile';
 import ContactUs from './Components/ContactUs/ContactUs';
 import PageNotFound from './Components/PageNotFound';
 import PropertyPage from './Components/PropertyPage/PropertyPage';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/dealerProfile" element={<DealerProfile />}/>
         <Route path="/contactUs" element={<ContactUs />}/>
         <Route path="/property" element={<PropertyPage/>}/>
+        <Route path='/aboutUs' element={<AboutUs/>} />
       </Routes>
     </>
   );
