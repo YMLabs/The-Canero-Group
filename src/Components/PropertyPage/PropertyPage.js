@@ -72,36 +72,70 @@ function PropertyPage({ data }) {
       </div>
 
       {/* amenties  */}
-      <div className="py-8 w-full">
-        <h1 className="text-3xl text-center">Features</h1>
-        <div className="flex items-center justify-around text-xl">
-          <div>
-            <p>
-              <i class="fa fa-check" aria-hidden="true"></i>
-              Air Conditioning
-            </p>
-            <p>
-              <i class="fa fa-check" aria-hidden="true"></i>
-              Laundry
-            </p>
-            <p>
-              <i class="fa fa-check" aria-hidden="true"></i>
-              Microwave
-            </p>
+      <div className="py-8 w-full flex justify-center">
+        <div className="w-full py-8 bg-neutral-50">
+          <h1 className="text-3xl text-center">Features</h1>
+          <div className="flex items-center justify-around text-xl">
+            <div>
+              <p className="p-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Air Conditioning
+              </p>
+              <p className="p-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Laundry
+              </p>
+              <p className="p-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Microwave
+              </p>
+            </div>
+            <div>
+              <p className="p-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Sauna
+              </p>
+              <p className="p-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                WiFi
+              </p>
+              <p className="p-4">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Window Coverings
+              </p>
+            </div>
           </div>
-          <div>
-            <p>
-              <i class="fa fa-check" aria-hidden="true"></i>
-              Sauna
-            </p>
-            <p>
-              <i class="fa fa-check" aria-hidden="true"></i>
-              WiFi
-            </p>
-            <p>
-              <i class="fa fa-check" aria-hidden="true"></i>
-              Window Coverings
-            </p>
+        </div>
+
+        <div className="bg-neutral-100 w-full py-8">
+          <h1 className="text-3xl text-center">Additional Details</h1>
+          <div className="grid grid-cols-2 justify-center text-xl">
+            <div className="mx-16">
+              <p className="p-4">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <strong> Country: </strong> Miami-Dade County
+              </p>
+              <p className="p-4">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <strong> Living Area: </strong> {data.propertyArea}
+              </p>
+              <p className="p-4">
+                <i class="fa fa-wifi" aria-hidden="true"></i>
+                <strong> Internet: </strong>5G Broadband
+              </p>
+            </div>
+            <div>
+              <p className="p-4 w-2/3">
+                <i class="fa fa-microchip" aria-hidden="true"></i>
+                <strong> Appliances: </strong> Dishwasher, Disposal, Dryer,
+                Microwave, Refrigerator, Self Cleaning Oven, Wall Oven, Washer
+              </p>
+              <p className="p-4 w-2/3">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <strong>Features: </strong>Fire Alarm, Smoke Detector, Doorman,
+                Elevator Secure, Guard At Site, Lobby Secured
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -129,6 +163,17 @@ function PropertyPage({ data }) {
           alt=""
         />
       </div>
+
+      {/* <div className="">
+        <video
+          loop
+          autoplay
+          muted
+        >
+          <source src="./img/room-video.mp4" />
+        </video>
+      </div> */}
+
       <div className="py-4 my-4">
         <MortgageCalculator />
       </div>
